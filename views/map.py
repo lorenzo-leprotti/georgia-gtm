@@ -23,13 +23,13 @@ st.title("Georgia: KEWAZO's Next US Industrial Market")
 st.caption("A targeted GTM thesis · Lorenzo Leprotti · June 2026")
 st.divider()
 
-st.header("Target Map — Georgia Industrial Sites")
+st.header("Target Map: Georgia Industrial Sites")
 
 col_legend, col_map = st.columns([1, 5])
 with col_legend:
     st.markdown("**TIER LEGEND**")
     st.markdown("**Tier 1** (red)")
-    st.caption("Process industry — recurring maintenance shutdowns")
+    st.caption("Process industry, recurring maintenance shutdowns")
     st.markdown("**Tier 2** (orange)")
     st.caption("Active construction sites")
     st.markdown("**Tier 3** (grey)")
@@ -91,21 +91,21 @@ with t1_tab:
     st.dataframe(tier1, use_container_width=True, hide_index=True)
 
 with t2_tab:
-    st.markdown("**Active large-scale construction sites. Scaffolding demand exists now during the build phase — not recurring maintenance work.**")
+    st.markdown("**Active large-scale construction sites. Scaffolding demand exists now during the build phase, not recurring maintenance work.**")
     tier2.columns = ["Site", "Owner", "City", "Sector", "Status", "Confidence"]
     st.dataframe(tier2, use_container_width=True, hide_index=True)
 
 with t3_tab:
-    st.markdown("**Included for completeness, not as active targets. Discrete manufacturing — limited scaffolding-intensive maintenance work.**")
+    st.markdown("**Included for completeness, not as active targets. Discrete manufacturing, limited scaffolding-intensive maintenance work.**")
     tier3.columns = ["Site", "Owner", "City", "Sector", "Confidence"]
     st.dataframe(tier3, use_container_width=True, hide_index=True)
 
 with rubric_tab:
     st.markdown("**Five criteria scored per site. Priority targets score high on all five.**")
     rubric = pd.DataFrame([
-        {"Criterion": "Sector Fit", "High (3)": "Process industry — pulp & paper, power, chemical; scheduled maintenance shutdowns", "Medium (2)": "Discrete manufacturing with some periodic maintenance", "Low (1)": "New construction only, no recurring shutdowns"},
-        {"Criterion": "Scaffolding Intensity", "High (3)": "Confirmed scaffolding-heavy work (boilers, turbines, pressure vessels)", "Medium (2)": "Some scaffolding in periodic maintenance", "Low (1)": "Minimal — clean room or discrete assembly"},
-        {"Criterion": "Recurrence", "High (3)": "Annual or 18-month maintenance cycle (recurring revenue opportunity)", "Medium (2)": "Multi-year cycle, infrequent", "Low (1)": "One-off build — no repeat"},
+        {"Criterion": "Sector Fit", "High (3)": "Process industry (pulp & paper, power, chemical) with scheduled maintenance shutdowns", "Medium (2)": "Discrete manufacturing with some periodic maintenance", "Low (1)": "New construction only, no recurring shutdowns"},
+        {"Criterion": "Scaffolding Intensity", "High (3)": "Confirmed scaffolding-heavy work (boilers, turbines, pressure vessels)", "Medium (2)": "Some scaffolding in periodic maintenance", "Low (1)": "Minimal: clean room or discrete assembly"},
+        {"Criterion": "Recurrence", "High (3)": "Annual or 18-month maintenance cycle (recurring revenue opportunity)", "Medium (2)": "Multi-year cycle, infrequent", "Low (1)": "One-off build, no repeat"},
         {"Criterion": "Owner Type", "High (3)": "Corporate owner-operator, ideally Atlanta-headquartered", "Medium (2)": "Corporate owner, remote headquarters", "Low (1)": "Fragmented contractor structure, no clear owner-level relationship"},
         {"Criterion": "Active Demand", "High (3)": "Confirmed upcoming shutdown or active construction now", "Medium (2)": "Known cycle, no confirmed near-term activity", "Low (1)": "No confirmed near-term activity"},
     ])
