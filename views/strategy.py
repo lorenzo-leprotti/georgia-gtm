@@ -53,19 +53,19 @@ c4.metric("LIFTBOT material-handling reduction", "~70%")
 
 st.info(
     "**Market anchor — Clearwater Paper Augusta Mill:** Three confirmed major "
-    "maintenance outages in 2025, approximately $50M in total direct labor. "
-    "At 20 percent scaffolding share, that is ~$10M in scaffolding labor at one "
+    "maintenance outages in 2025, approximately \\$50M in total direct labor. "
+    "At 20 percent scaffolding share, that is ~\\$10M in scaffolding labor at one "
     "mid-sized paper mill in a single year. The eight T1 sites include two larger "
     "Georgia-Pacific mills and four multi-unit power plants with comparable or "
     "larger shutdown budgets."
 )
 
 st.write(
-    "The $350M figure is a conservative floor: it does not include the six Tier 2 "
+    "The \\$350M figure is a conservative floor: it does not include the six Tier 2 "
     "construction sites, which represent additional near-term scaffolding demand "
     "during the build phase. Plant Vogtle alone — the largest nuclear facility in "
     "the US — runs near-continuous outages across four units, with each refueling "
-    "outage carrying an estimated $50M to $150M in direct labor."
+    "outage carrying an estimated \\$50M to \\$150M in direct labor."
 )
 
 st.divider()
