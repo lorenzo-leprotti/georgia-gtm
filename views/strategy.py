@@ -18,27 +18,27 @@ with col1:
     )
 with col2:
     st.info(
-        "**Part 2 — The Timing Wedge**\n\n"
+        "**Part 2 — The Construction Boom**\n\n"
         "A $20B+ manufacturing boom creates urgency now. Hyundai Metaplant, battery "
         "plants, Qcells, Rivian — active megaproject construction means scaffolding-heavy "
         "builds today. This is the \"why now,\" not the core thesis. It opens the door; "
-        "the turnaround base keeps it open."
+        "the recurring maintenance base keeps it open."
     )
 
 c1, c2, c3, c4 = st.columns(4)
 stats = [
-    ("Tier 1 beachhead targets", "8"),
-    ("Avg TAR cadence, top sites", "~Annual"),
-    ("Scaffolding share of TAR labor", "15–25%"),
+    ("Priority targets identified", "8"),
+    ("Maintenance interval, top sites", "~Annual"),
+    ("Scaffolding share of shutdown labor", "15–25%"),
     ("LIFTBOT material-handling reduction", "~70%"),
 ]
 for col, (lbl, num) in zip([c1, c2, c3, c4], stats):
     col.metric(lbl, num)
 
 st.warning(
-    "**The value anchor:** Scaffolding is ~15–25% of total turnaround direct labor "
-    "(up to 35–40% when access is reactive). A ~70% reduction in scaffold "
-    "material-handling translates to roughly **10–17% reduction in total TAR direct "
+    "**The value anchor:** Scaffolding is ~15–25% of total shutdown direct labor "
+    "(up to 35–40% when access is planned reactively). A ~70% reduction in scaffold "
+    "material-handling translates to roughly **10–17% reduction in total shutdown direct "
     "labor cost** — a board-level number for asset owners running multi-million-dollar "
     "outages."
 )
@@ -57,7 +57,7 @@ with col_a:
         st.caption("DECISION-MAKER")
         st.markdown("**Asset Owner / Operator**")
         st.write("Georgia Power · Southern Company · Georgia-Pacific · Clearwater Paper")
-        st.caption("Specs-in LIFTBOT, sets the TAR plan, approves vendors. HQ'd in Atlanta.")
+        st.caption("Specifies LIFTBOT, sets the maintenance plan, approves vendors. Headquartered in Atlanta.")
 with col_arr1:
     st.markdown("##### →")
 with col_b:
@@ -70,7 +70,7 @@ with col_arr2:
     st.markdown("##### →")
 with col_c:
     with st.container(border=True):
-        st.caption("AT TAR EXECUTION")
+        st.caption("ON-SITE")
         st.markdown("**LIFTBOT Deployed**")
         st.write("Material handling on scaffolding-heavy maintenance shutdowns")
         st.caption("Owner mandates create pull; contractor labor shortage creates push.")
@@ -78,8 +78,8 @@ with col_c:
 st.caption(
     "**On channel tension:** Scaffold contractors bill by man-hour, so a labor-cutting "
     "robot can look like a margin threat. This resolves through two forces: (1) a "
-    "structural labor shortage — they can't staff large TARs fully anyway — and (2) "
-    "owner spec-in mandates, which reframe the contractor as a delivery channel, not a "
-    "gatekeeper. BrandSafway's Alpharetta HQ makes them the natural first partnership "
-    "conversation in Georgia."
+    "structural labor shortage — they can't staff large shutdowns fully anyway — and (2) "
+    "owner mandates, which reframe the contractor as a delivery channel, not a "
+    "gatekeeper. BrandSafway's Alpharetta headquarters makes them the natural first "
+    "partnership conversation in Georgia."
 )
