@@ -27,11 +27,11 @@ st.write(
 
 st.write(
     "Scaffolding typically accounts for 15 to 25 percent of total labor on a maintenance "
-    "shutdown, rising to 35 to 40 percent when access is planned reactively. A 70 percent "
-    "reduction in the material-handling portion of that work (KEWAZO's documented claim "
-    "for LIFTBOT) translates to roughly 10 to 17 percent reduction in total shutdown "
-    "direct labor cost. For asset owners running multi-million-dollar maintenance budgets, "
-    "that is a board-level number."
+    "shutdown, rising to 35 to 40 percent when access is planned reactively. KEWAZO's "
+    "documented range for LIFTBOT is a 40 to 70 percent reduction in material-handling "
+    "labor, with industrial deployments typically closer to 40 percent. That translates "
+    "to an 8 to 14 percent reduction in total shutdown direct labor cost. For asset owners "
+    "running multi-million-dollar maintenance budgets, that is a board-level number."
 )
 
 st.write(

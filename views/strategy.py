@@ -26,10 +26,11 @@ st.write(
 )
 
 st.write(
-    "LIFTBOT automates that material-handling step. KEWAZO's documented result is a "
-    "70 percent reduction in the material-handling labor requirement. On a shutdown where "
-    "scaffolding is 20 percent of total direct labor, that translates to a 10 to 14 percent "
-    "reduction in total shutdown direct labor cost."
+    "LIFTBOT automates that material-handling step. KEWAZO's documented range is a "
+    "40 to 70 percent reduction in material-handling labor, with industrial deployments "
+    "typically closer to 40 percent. On a shutdown where scaffolding is 20 percent of "
+    "total direct labor, that translates to an 8 to 14 percent reduction in total "
+    "shutdown direct labor cost."
 )
 
 st.divider()
@@ -46,24 +47,26 @@ st.write(
 
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Priority facilities (T1)", "8")
-c2.metric("Est. aggregate shutdown labor", ">$350M / yr", help="Bottom-up estimate across 8 T1 sites. See methodology for sources.")
+c2.metric("Est. aggregate shutdown labor", "~$100-200M / yr", help="Bottom-up estimate across 8 T1 sites using corrected per-outage figures. Treat as indicative, not verified.")
 c3.metric("Scaffolding share of shutdown labor", "15-25%")
-c4.metric("LIFTBOT material-handling reduction", "~70%")
+c4.metric("LIFTBOT material-handling reduction", "40-70%")
 
 st.info(
     "**Market anchor: Clearwater Paper Augusta Mill.** Three confirmed major maintenance "
-    "outages in 2025, approximately \\$50M in total direct labor. At 20 percent scaffolding "
-    "share, that is roughly \\$10M in scaffolding labor at one mid-sized paper mill in a "
-    "single year. The eight T1 sites include two larger Georgia-Pacific mills and four "
-    "multi-unit power plants with comparable or larger shutdown budgets."
+    "outages across Clearwater's three mills in 2025, approximately \\$50M combined in "
+    "direct labor. The Augusta mill alone accounts for roughly \\$16M of that (one-third "
+    "of combined spend). At 20 percent scaffolding share, that is approximately \\$3M in "
+    "scaffolding labor at Augusta in a single year. The \\$100-200M aggregate estimate "
+    "scales this across the eight T1 sites using the same per-site logic."
 )
 
 st.write(
-    "The \\$350M figure is a conservative floor. It does not include the six Tier 2 "
-    "construction sites, which represent additional near-term scaffolding demand during "
-    "the build phase. Plant Vogtle alone, the largest nuclear facility in the US, runs "
-    "near-continuous outages across four units, with each refueling outage carrying an "
-    "estimated \\$50M to \\$150M in direct labor."
+    "The \\$100-200M estimate does not include the six Tier 2 construction sites, which "
+    "represent additional near-term scaffolding demand during the build phase. Plant Vogtle, "
+    "the largest nuclear facility in the US, runs near-continuous outages across four units. "
+    "Per NEI data, US nuclear refueling outages average 20 to 35 days at \\$300K to \\$800K "
+    "per day in direct labor, putting each Vogtle outage at approximately \\$16M to \\$28M, "
+    "not the \\$50M-\\$150M figures that appear in some secondary sources."
 )
 
 st.divider()
