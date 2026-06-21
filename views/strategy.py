@@ -47,26 +47,43 @@ st.write(
 
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Priority facilities (T1)", "8")
-c2.metric("Est. aggregate shutdown labor", "~$100-200M / yr", help="Bottom-up estimate across 8 T1 sites using corrected per-outage figures. Treat as indicative, not verified.")
-c3.metric("Scaffolding share of shutdown labor", "15-25%")
+c2.metric("Est. aggregate shutdown labor", "~$164M / yr", help="Bottom-up from 8 T1 sites. Clearwater Augusta confirmed ($16M, Q3 2025 earnings); nuclear per NEI/Industrial Info Resources benchmarks; coal/gas estimated. Treat as indicative.")
+c3.metric("Scaffolding share of shutdown labor", "15-25%", help="AMECO (2023): 20% of total direct field labor. BrandSafway / Hydrocarbon Engineering: 15-25%, up to 35-40% when access is reactive.")
 c4.metric("LIFTBOT material-handling reduction", "40-70%")
 
 st.info(
     "**Market anchor: Clearwater Paper Augusta Mill.** Three confirmed major maintenance "
     "outages across Clearwater's three mills in 2025, approximately \\$50M combined in "
-    "direct labor. The Augusta mill alone accounts for roughly \\$16M of that (one-third "
-    "of combined spend). At 20 percent scaffolding share, that is approximately \\$3M in "
-    "scaffolding labor at Augusta in a single year. The \\$100-200M aggregate estimate "
-    "scales this across the eight T1 sites using the same per-site logic."
+    "direct labor. The Augusta mill alone accounts for roughly \\$16M (confirmed, Q3 2025 "
+    "earnings call). At 20 percent scaffolding share, that is approximately \\$3M in "
+    "scaffolding labor at Augusta in a single year."
 )
 
+sizing_df = pd.DataFrame([
+    {"Site": "Clearwater Paper Augusta", "Est. annual outage cost": "~$16M (confirmed, Clearwater IR Q3 2025)", "Scaffolding share (20%)": "~$3.2M"},
+    {"Site": "GP Brunswick Cellulose", "Est. annual outage cost": "~$10-15M (estimated; no public figure)", "Scaffolding share (20%)": "~$2-3M"},
+    {"Site": "GP Rincon", "Est. annual outage cost": "~$8-12M (estimated, tissue mill)", "Scaffolding share (20%)": "~$1.6-2.4M"},
+    {"Site": "Plant Vogtle (4 units, staggered ~18 mo)", "Est. annual outage cost": "~$53M / yr equiv. (~$20M/unit × 4 ÷ 1.5)", "Scaffolding share (20%)": "~$10.6M"},
+    {"Site": "Plant Hatch (2 units, ~18 mo)", "Est. annual outage cost": "~$24M / yr equiv. (~$18M/unit × 2 ÷ 1.5)", "Scaffolding share (20%)": "~$4.8M"},
+    {"Site": "Plant Bowen (4 units, every 3 yr)", "Est. annual outage cost": "~$20M / yr equiv. (~$15M/unit × 4 ÷ 3)", "Scaffolding share (20%)": "~$4M"},
+    {"Site": "Plant Scherer (3 units, every 3 yr)", "Est. annual outage cost": "~$15M / yr equiv. (~$15M/unit × 3 ÷ 3)", "Scaffolding share (20%)": "~$3M"},
+    {"Site": "Plant Wansley (gas CC, every 4 yr)", "Est. annual outage cost": "~$8M / yr equiv. (~$8M/unit × 4 ÷ 4)", "Scaffolding share (20%)": "~$1.6M"},
+    {"Site": "Total", "Est. annual outage cost": "~$164M / yr", "Scaffolding share (20%)": "~$33M / yr"},
+])
+st.dataframe(sizing_df, use_container_width=True, hide_index=True)
+
 st.write(
-    "The \\$100-200M estimate does not include the six Tier 2 construction sites, which "
-    "represent additional near-term scaffolding demand during the build phase. Plant Vogtle, "
-    "the largest nuclear facility in the US, runs near-continuous outages across four units. "
-    "Per NEI data, US nuclear refueling outages average 20 to 35 days at \\$300K to \\$800K "
-    "per day in direct labor, putting each Vogtle outage at approximately \\$16M to \\$28M, "
-    "not the \\$50M-\\$150M figures that appear in some secondary sources."
+    "Of the approximately \\$33M in annual scaffolding labor across T1 sites, LIFTBOT's "
+    "40 to 70 percent reduction on material handling represents \\$13M to \\$23M in annual "
+    "savings available to Georgia T1 owners. Nuclear plant outages (Vogtle, Hatch) carry "
+    "roughly half that opportunity given their scale and frequency."
+)
+
+st.caption(
+    "Three large Georgia paper mills closed in summer 2025: GP Cedar Springs (August 2025), "
+    "IP Savannah, and IP Riceboro (September 2025). The active kraft and tissue mill count "
+    "dropped from six to three. The surviving mills (GP Brunswick, GP Rincon, Clearwater Augusta) "
+    "are larger and better-capitalized. The \\$164M estimate reflects the post-closure T1 set."
 )
 
 st.divider()
@@ -81,8 +98,8 @@ st.markdown(
     "Discrete manufacturing (auto assembly, electronics) does not generate comparable demand.\n\n"
     "- **Both buyers are in Atlanta.** Georgia Power and Georgia-Pacific, the two largest asset "
     "owners in the T1 pipeline, are headquartered in Atlanta. BrandSafway, the dominant "
-    "scaffolding contractor in the Southeast, is headquartered in Alpharetta. Both sides of "
-    "every LIFTBOT sale are reachable from one city.\n\n"
+    "scaffolding contractor in the Southeast, is also headquartered in Atlanta (600 Galleria "
+    "Pkwy SE). Both sides of every LIFTBOT sale are reachable from one city.\n\n"
     "- **A construction boom opens doors now.** A \\$20B+ manufacturing build-out is underway: "
     "Hyundai Metaplant, Qcells solar, multiple battery plants, Rivian. These sites generate "
     "scaffolding demand today and put KEWAZO in front of contractors and owners actively "
@@ -153,17 +170,18 @@ with col2:
 with col3:
     with st.container(border=True):
         st.caption("DEPLOYMENT CHANNEL")
-        st.markdown("**VP Operations, BrandSafway (Alpharetta)**")
+        st.markdown("**VP Operations, BrandSafway (Atlanta HQ)**")
         st.write(
-            "BrandSafway almost certainly holds the GP Brunswick scaffold "
-            "contract. Getting to them first is a shortcut: they can introduce "
-            "KEWAZO to every site they service in Georgia. 20 minutes from Atlanta."
+            "BrandSafway likely holds the GP Brunswick scaffold contract "
+            "(commercially inferred from their sector positioning and Georgia "
+            "footprint; no contract is publicly confirmed). Getting to them first "
+            "is a shortcut: one relationship unlocks every site they service in Georgia."
         )
 
 st.subheader("How to Get There")
 
 st.markdown(
-    "**Path 1: Contractor first (fastest).** BrandSafway Alpharetta is the highest-leverage "
+    "**Path 1: Contractor first (fastest).** BrandSafway's Atlanta office is the highest-leverage "
     "first call. If they hold the GP Brunswick contract and agree to pilot LIFTBOT, they "
     "facilitate the owner introduction and handle on-site deployment. One relationship "
     "unlocks multiple sites.\n\n"
@@ -233,7 +251,7 @@ with col_2:
     with st.container(border=True):
         st.caption("STEP 2: DEPLOYMENT")
         st.markdown("**Scaffold Contractor**")
-        st.write("BrandSafway (Alpharetta HQ) · Apache Industrial Services")
+        st.write("BrandSafway (Atlanta HQ) · Apache Industrial Services")
         st.caption(
             "Physically deploys LIFTBOT on site under long-term service "
             "agreements with asset owners."
@@ -253,9 +271,13 @@ with col_3:
         )
 
 st.caption(
-    "**On channel tension:** Scaffold contractors bill by man-hour, so a labor-saving "
-    "robot can look like a margin threat. In practice two forces resolve this: a structural "
-    "skilled-labor shortage means contractors cannot fully staff large shutdowns anyway, "
-    "and owner mandates reframe the contractor as a delivery channel rather than a gatekeeper. "
-    "BrandSafway's Alpharetta headquarters makes them the natural first conversation in Georgia."
+    "**On channel tension:** Scaffold contractors bill by man-hour, so a labor-saving robot "
+    "looks like a margin threat. Two forces soften this: a structural skilled-labor shortage "
+    "means contractors cannot fully staff large shutdowns anyway, and owner mandates reframe "
+    "the contractor as a delivery channel rather than a gatekeeper. The harder constraint is "
+    "timing: owners write LIFTBOT into the shutdown specification 12 to 18 months before the "
+    "outage, during annual maintenance planning. KEWAZO must get into the owner's planning "
+    "cycle before the contractor is even engaged. A documented pilot result from one Clearwater "
+    "or GP mill is what gets LIFTBOT into subsequent shutdown specifications across the "
+    "portfolio. BrandSafway's Atlanta headquarters makes them the natural first conversation."
 )

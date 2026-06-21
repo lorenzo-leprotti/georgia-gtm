@@ -47,7 +47,7 @@ st.write(
     "Georgia's particular advantage: both sides of the commercial relationship are "
     "headquartered in metro Atlanta. The asset owners who would approve LIFTBOT "
     "(Georgia Power, Georgia-Pacific) and the scaffolding contractors who would deploy "
-    "it on site (BrandSafway, headquartered in Alpharetta) are both local. This is "
+    "it on site (BrandSafway, headquartered in Atlanta) are both local. This is "
     "unusual and materially reduces the cost of building both the owner relationship "
     "and the deployment channel at the same time."
 )
