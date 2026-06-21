@@ -8,7 +8,8 @@ st.set_page_config(
 )
 
 pg = st.navigation([
-    st.Page("views/strategy.py", title="Strategy & Map", icon="🗺️", default=True),
+    st.Page("views/map.py", title="Target Map", icon="🗺️", default=True),
+    st.Page("views/strategy.py", title="GTM Strategy", icon="📋"),
     st.Page("views/methodology.py", title="Methodology", icon="🧭"),
 ])
 pg.run()
