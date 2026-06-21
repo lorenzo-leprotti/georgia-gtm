@@ -1,85 +1,181 @@
 import streamlit as st
 
-st.title("Georgia: KEWAZO's Next US Industrial Market")
-st.caption("A targeted GTM thesis · Lorenzo Leprotti · June 2026")
+st.title("Georgia GTM Strategy")
+st.caption("Why Georgia, why now, and how KEWAZO gets in · Lorenzo Leprotti · June 2026")
 st.divider()
 
-st.header("The Thesis")
+# ── THE PROBLEM ──────────────────────────────────────────────────────────────
+st.header("The Problem")
 
-col1, col2 = st.columns(2)
-with col1:
-    st.info(
-        "**Part 1 — The Base**\n\n"
-        "Georgia's process-industry base drives recurring revenue. Pulp & paper mills "
-        "and power plants run scheduled maintenance turnarounds on annual to 18-month "
-        "cycles. This is exactly KEWAZO's proven use case — the same job shape as Gulf "
-        "Coast energy work. Atlanta-headquartered owners (Georgia Power, Georgia-Pacific) "
-        "control both sides of the spec-in decision."
-    )
-with col2:
-    st.info(
-        "**Part 2 — The Construction Boom**\n\n"
-        "A $20B+ manufacturing boom creates urgency now. Hyundai Metaplant, battery "
-        "plants, Qcells, Rivian — active megaproject construction means scaffolding-heavy "
-        "builds today. This is the \"why now,\" not the core thesis. It opens the door; "
-        "the recurring maintenance base keeps it open."
-    )
+st.write(
+    "Large process-industry facilities — paper mills, nuclear plants, fossil fuel "
+    "power plants — run scheduled maintenance shutdowns where all non-essential "
+    "equipment is taken offline for inspection, repair, and replacement. During these "
+    "shutdowns, scaffolding goes up around boilers, turbines, pressure vessels, and "
+    "other machinery. Erecting, stocking, and dismantling that scaffolding is the "
+    "most labor-intensive and one of the most dangerous parts of the shutdown."
+)
+
+st.write(
+    "Scaffolding accounts for 15 to 25 percent of total direct labor on a "
+    "maintenance shutdown — rising to 35 to 40 percent when access is planned "
+    "reactively. Contractors already struggle to staff these jobs: skilled scaffolding "
+    "crews are in short supply, and large shutdowns require hundreds of workers "
+    "simultaneously. The material-handling portion of that work — moving loads "
+    "up and through the structure — is done almost entirely by hand."
+)
+
+st.write(
+    "LIFTBOT automates that material-handling step. KEWAZO's documented result is a "
+    "~70 percent reduction in the material-handling labor requirement. On a shutdown "
+    "where scaffolding is 20 percent of total direct labor, that translates to a "
+    "10 to 14 percent reduction in total shutdown direct labor cost."
+)
+
+st.divider()
+
+# ── MARKET SIZING ────────────────────────────────────────────────────────────
+st.header("Georgia's Industrial Maintenance Market")
+
+st.write(
+    "The analysis identified eight process-industry facilities in Georgia that run "
+    "scaffolding-intensive maintenance shutdowns on recurring cycles. These are the "
+    "priority targets. The market sizing below is built bottom-up from those sites "
+    "using documented shutdown data where available and published industry benchmarks "
+    "where not."
+)
 
 c1, c2, c3, c4 = st.columns(4)
-stats = [
-    ("Priority targets identified", "8"),
-    ("Maintenance interval, top sites", "~Annual"),
-    ("Scaffolding share of shutdown labor", "15–25%"),
-    ("LIFTBOT material-handling reduction", "~70%"),
-]
-for col, (lbl, num) in zip([c1, c2, c3, c4], stats):
-    col.metric(lbl, num)
+c1.metric("Priority facilities (T1)", "8")
+c2.metric("Est. aggregate shutdown labor", ">$350M / yr", help="Bottom-up estimate across 8 T1 sites. See methodology for sources.")
+c3.metric("Scaffolding share of shutdown labor", "15–25%")
+c4.metric("LIFTBOT material-handling reduction", "~70%")
 
-st.warning(
-    "**The value anchor:** Scaffolding is ~15–25% of total shutdown direct labor "
-    "(up to 35–40% when access is planned reactively). A ~70% reduction in scaffold "
-    "material-handling translates to roughly **10–17% reduction in total shutdown direct "
-    "labor cost** — a board-level number for asset owners running multi-million-dollar "
-    "outages."
+st.info(
+    "**Market anchor — Clearwater Paper Augusta Mill:** Three confirmed major "
+    "maintenance outages in 2025, approximately $50M in total direct labor. "
+    "At 20 percent scaffolding share, that is ~$10M in scaffolding labor at one "
+    "mid-sized paper mill in a single year. The eight T1 sites include two larger "
+    "Georgia-Pacific mills and four multi-unit power plants with comparable or "
+    "larger shutdown budgets."
 )
 
-st.header("The Buyer Model")
-
-st.markdown(
-    "Georgia is unusual: **both ends of the GTM sit in metro Atlanta.** "
-    "Asset owners who approve the technology and scaffold contractors who deploy it "
-    "on site are both headquartered here."
+st.write(
+    "The $350M figure is a conservative floor: it does not include the six Tier 2 "
+    "construction sites, which represent additional near-term scaffolding demand "
+    "during the build phase. Plant Vogtle alone — the largest nuclear facility in "
+    "the US — runs near-continuous outages across four units, with each refueling "
+    "outage carrying an estimated $50M to $150M in direct labor."
 )
 
-col_a, col_arr1, col_b, col_arr2, col_c = st.columns([3, 0.5, 3, 0.5, 3])
+st.divider()
+
+# ── WHY GEORGIA ──────────────────────────────────────────────────────────────
+st.header("Why Georgia")
+
+col_a, col_b = st.columns(2)
+
 with col_a:
     with st.container(border=True):
-        st.caption("DECISION-MAKER")
-        st.markdown("**Asset Owner / Operator**")
-        st.write("Georgia Power · Southern Company · Georgia-Pacific · Clearwater Paper")
-        st.caption("Specifies LIFTBOT, sets the maintenance plan, approves vendors. Headquartered in Atlanta.")
-with col_arr1:
-    st.markdown("##### →")
+        st.markdown("**The right type of facilities**")
+        st.write(
+            "Georgia's industrial base is heavily weighted toward process "
+            "industries — paper, power, chemicals — where scaffolding-intensive "
+            "maintenance shutdowns are routine and recurring. This is different "
+            "from discrete manufacturing (auto assembly, electronics), where "
+            "maintenance is more contained and scaffolding demand is limited."
+        )
+
 with col_b:
     with st.container(border=True):
-        st.caption("DEPLOYMENT CHANNEL")
-        st.markdown("**Scaffold / Access Contractor**")
-        st.write("BrandSafway (Alpharetta, GA HQ) · Apache Industrial Services")
-        st.caption("Physically deploys LIFTBOT on site under long-term service agreements with owners.")
-with col_arr2:
-    st.markdown("##### →")
+        st.markdown("**Both buyers are local**")
+        st.write(
+            "Georgia is unusual: both sides of the commercial relationship are "
+            "headquartered in metro Atlanta. Georgia Power and Georgia-Pacific — "
+            "the two largest asset owners in the T1 pipeline — are Atlanta-based. "
+            "BrandSafway, the dominant scaffolding contractor in the Southeast and "
+            "a likely deployment channel for LIFTBOT, is headquartered in Alpharetta. "
+            "This compresses the cost of building both relationships simultaneously."
+        )
+
+col_c, col_d = st.columns(2)
+
 with col_c:
     with st.container(border=True):
-        st.caption("ON-SITE")
-        st.markdown("**LIFTBOT Deployed**")
-        st.write("Material handling on scaffolding-heavy maintenance shutdowns")
-        st.caption("Owner mandates create pull; contractor labor shortage creates push.")
+        st.markdown("**A construction boom creates near-term demand**")
+        st.write(
+            "A $20B+ manufacturing build-out — Hyundai Metaplant, multiple battery "
+            "plants, Qcells solar, Rivian — means scaffolding-heavy construction "
+            "is happening in Georgia right now. These sites do not generate recurring "
+            "maintenance shutdowns, but they open conversations with contractors "
+            "and owners who are actively deploying scaffolding crews at scale."
+        )
+
+with col_d:
+    with st.container(border=True):
+        st.markdown("**A defined, reachable set of targets**")
+        st.write(
+            "Eight priority facilities, two owner companies (Georgia Power and "
+            "Georgia-Pacific together own six of the eight), and one dominant "
+            "contractor (BrandSafway). This is a narrow enough target set that "
+            "a two-person enterprise sales effort can cover it in a structured "
+            "account-based motion without spray-and-pray."
+        )
+
+st.divider()
+
+# ── BUYER MODEL ──────────────────────────────────────────────────────────────
+st.header("The Buyer Model")
+
+st.write(
+    "There are two decision-makers in every LIFTBOT deployment. The asset owner "
+    "approves the technology and specifies it into the shutdown plan. The scaffolding "
+    "contractor physically deploys it on site. Both need to be sold — in that order."
+)
+
+col_1, col_arr1, col_2, col_arr2, col_3 = st.columns([3, 0.5, 3, 0.5, 3])
+
+with col_1:
+    with st.container(border=True):
+        st.caption("STEP 1 — SPECIFICATION")
+        st.markdown("**Asset Owner / Operator**")
+        st.write("Georgia Power · Southern Company · Georgia-Pacific · Clearwater Paper")
+        st.caption(
+            "Approves LIFTBOT, sets the shutdown plan, mandates vendor. "
+            "All major T1 owners are headquartered in Atlanta."
+        )
+
+with col_arr1:
+    st.markdown("##### →")
+
+with col_2:
+    with st.container(border=True):
+        st.caption("STEP 2 — DEPLOYMENT")
+        st.markdown("**Scaffold Contractor**")
+        st.write("BrandSafway (Alpharetta HQ) · Apache Industrial Services")
+        st.caption(
+            "Physically deploys LIFTBOT on site under long-term service "
+            "agreements with asset owners."
+        )
+
+with col_arr2:
+    st.markdown("##### →")
+
+with col_3:
+    with st.container(border=True):
+        st.caption("OUTCOME")
+        st.markdown("**Shutdown Executed with LIFTBOT**")
+        st.write("Material handling automated; smaller crew, faster cycle, fewer injuries")
+        st.caption(
+            "Owner captures the cost reduction. Contractor captures the labor "
+            "shortage buffer — they can execute larger shutdowns with fewer bodies."
+        )
 
 st.caption(
-    "**On channel tension:** Scaffold contractors bill by man-hour, so a labor-cutting "
-    "robot can look like a margin threat. This resolves through two forces: (1) a "
-    "structural labor shortage — they can't staff large shutdowns fully anyway — and (2) "
-    "owner mandates, which reframe the contractor as a delivery channel, not a "
-    "gatekeeper. BrandSafway's Alpharetta headquarters makes them the natural first "
-    "partnership conversation in Georgia."
+    "**On channel tension:** Scaffold contractors bill by man-hour, so a "
+    "labor-saving robot can look like a margin threat. In practice, two forces "
+    "resolve this: a structural skilled-labor shortage means contractors cannot "
+    "fully staff large shutdowns anyway, and owner mandates reframe the contractor "
+    "as a delivery channel rather than a gatekeeper. BrandSafway's Alpharetta "
+    "headquarters makes them the natural first conversation in Georgia."
 )
