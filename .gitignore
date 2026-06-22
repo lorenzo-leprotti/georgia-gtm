@@ -16,3 +16,8 @@ env/
 
 # Env
 .env
+
+# Tooling / build artifacts
+.playwright-mcp/
+*.bundle
+.python-version
