@@ -4,7 +4,7 @@ An interactive Streamlit app arguing that Georgia is KEWAZO's next US industrial
 market. Built as a research artifact for the KEWAZO interview process: a structured,
 sourced go-to-market thesis that works as a live screen-share or as a sent link.
 
-**Live app:** https://georgia-gtm-uuapqbzsh7cx2nwqpo9yjn.streamlit.app/
+**Live app:** https://georgia-gtm-strategy.streamlit.app/
 
 ## What it is
 
