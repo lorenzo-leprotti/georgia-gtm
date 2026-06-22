@@ -26,15 +26,6 @@ st.write(
 )
 
 st.write(
-    "Scaffolding typically accounts for 15 to 25 percent of total labor on a maintenance "
-    "shutdown, rising to 35 to 40 percent when access is planned reactively. KEWAZO's "
-    "documented range for LIFTBOT is a 40 to 70 percent reduction in material-handling "
-    "labor, with industrial deployments typically closer to 40 percent. That translates "
-    "to an 8 to 14 percent reduction in total shutdown direct labor cost. For asset owners "
-    "running multi-million-dollar maintenance budgets, that is a board-level number."
-)
-
-st.write(
     "This analysis argues that Georgia is KEWAZO's next US market entry target. The case "
     "has two parts: a base of process-industry facilities (paper mills and power plants) "
     "that run scheduled maintenance shutdowns on annual to 18-month cycles (the recurring, "
@@ -55,36 +46,51 @@ st.write(
 st.header("Methodology")
 
 st.write(
-    "The research followed a source-first approach. Inclusion criteria were defined "
-    "before any site was added: operating industrial facilities in Georgia with confirmed "
-    "or likely scaffolding-intensive maintenance operations. Three rules applied throughout:"
+    "The research followed a source-first process applied in a fixed sequence. Each step "
+    "below had to pass before a site advanced to the next."
 )
 
-st.write(
-    "**No source, no row.** Every site in this analysis requires a named, dated, "
-    "publicly accessible source to be included. Sites verified only through informal "
-    "or unattributable sources were excluded."
+st.markdown(
+    "**Step 1. Define inclusion criteria before adding any site.** "
+    "A site qualified only if it was an operating industrial facility in Georgia with "
+    "confirmed or likely scaffolding-intensive maintenance operations. The criteria were "
+    "fixed first so that no site could be added to fit a conclusion."
 )
 
-st.write(
-    "**Closed or inactive sites excluded.** Three mills were removed during verification "
-    "after being found inactive or permanently closed."
+st.markdown(
+    "**Step 2. Source every site (no source, no row).** "
+    "Every site required a named, dated, publicly accessible source to be included. "
+    "Sites known only through informal or unattributable sources were not added."
 )
 
-st.write(
-    "**Precision over approximation.** Map coordinates were corrected against authoritative "
-    "sources including Global Energy Monitor, Wikipedia facility infoboxes, and official "
-    "facility addresses. Citations were upgraded where possible; the primary source for "
-    "the top target site was moved from a county government social media post to a dated "
-    "trade press article."
+st.markdown(
+    "**Step 3. Verify and exclude.** "
+    "Sites found closed or inactive were removed (three mills were dropped during this "
+    "step). Citations were upgraded where possible: the primary source for the top target "
+    "site was moved from a county government social media post to a dated trade press "
+    "article. Map coordinates were corrected against authoritative sources including "
+    "Global Energy Monitor, Wikipedia facility infoboxes, and official facility addresses."
 )
 
-st.write(
-    "Each site was evaluated on five criteria: fit for scaffolding-intensive maintenance "
-    "work, confirmed demand for scaffolding access, frequency of recurring shutdowns, "
-    "ownership structure (corporate owner-operators receive higher weight than fragmented "
-    "contractors), and whether active demand is confirmed now. Targets were grouped into "
-    "three tiers based on their overall score."
+st.markdown(
+    "**Step 4. Score each site on five evaluation dimensions.** "
+    "Every surviving site was scored on the same five dimensions:"
+)
+
+st.markdown(
+    "1. Fit for scaffolding-intensive maintenance work.\n"
+    "2. Confirmed demand for scaffolding access.\n"
+    "3. Frequency of recurring shutdowns.\n"
+    "4. Ownership structure (corporate owner-operators are weighted higher than "
+    "fragmented contractors).\n"
+    "5. Whether active demand is confirmed now."
+)
+
+st.markdown(
+    "**Step 5. Group into tiers by score.** "
+    "Sites were grouped into three tiers based on their overall score across the five "
+    "dimensions. Each site also carries a confidence level reflecting the quality of its "
+    "primary source (defined in the Sources section below)."
 )
 
 st.subheader("Limitations")
