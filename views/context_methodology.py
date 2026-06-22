@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 import streamlit as st
 import pandas as pd
 
@@ -112,17 +114,17 @@ st.write(
     "or secondary aggregators."
 )
 
-sources = df[["site_name", "source_url", "source_date", "confidence"]].copy()
-sources.columns = ["Site", "Source", "Date", "Confidence"]
+def _domain(url: str) -> str:
+    netloc = urlparse(url).netloc
+    return netloc[4:] if netloc.startswith("www.") else netloc
 
-st.dataframe(
-    sources,
-    column_config={
-        "Source": st.column_config.LinkColumn("Source"),
-    },
-    use_container_width=True,
-    hide_index=True,
-)
+
+rows = ["| Site | Source | Date | Confidence |", "| --- | --- | --- | --- |"]
+for _, r in df.iterrows():
+    link = f"[{_domain(r['source_url'])}]({r['source_url']})"
+    rows.append(f"| {r['site_name']} | {link} | {r['source_date']} | {r['confidence']} |")
+
+st.markdown("\n".join(rows))
 
 st.divider()
 st.caption("Lorenzo Leprotti · June 2026 · Built with Streamlit + pydeck")
