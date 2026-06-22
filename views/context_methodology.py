@@ -47,51 +47,61 @@ st.write(
 st.header("Methodology")
 
 st.write(
-    "The research followed a source-first process applied in a fixed sequence. Each step "
-    "below had to pass before a site advanced to the next."
+    "This analysis was built with an AI-assisted workflow: specification first, deep "
+    "research with traceable sources, cross-checking across tools, and a working app at "
+    "the end. The process mattered as much as the conclusion, so it is described here in "
+    "full."
+)
+
+st.subheader("How this was built")
+
+st.markdown(
+    "**Specification before code.** The project started with a written product "
+    "requirements document: purpose, audience, success criteria, and an explicit "
+    "out-of-scope line, all fixed before anything was built. The strategy drove the "
+    "artifact rather than the reverse."
 )
 
 st.markdown(
-    "**Step 1. Define inclusion criteria before adding any site.** "
-    "A site qualified only if it was an operating industrial facility in Georgia with "
-    "confirmed or likely scaffolding-intensive maintenance operations. The criteria were "
-    "fixed first so that no site could be added to fit a conclusion."
+    "**Deep research for every claim.** Site-level facts were gathered with Perplexity in "
+    "deep-research mode, which returns answers with traceable citations. Every site and "
+    "figure had to carry a dated, publicly accessible source before it could enter the "
+    "dataset."
 )
 
 st.markdown(
-    "**Step 2. Source every site (no source, no row).** "
-    "Every site required a named, dated, publicly accessible source to be included. "
-    "Sites known only through informal or unattributable sources were not added."
+    "**Cross-referencing across tools.** Claude handled reasoning, structuring the "
+    "argument, and synthesis; Perplexity handled source-grounded fact-finding. Findings "
+    "from each were checked against the other, and a dedicated reference-check pass caught "
+    "and corrected several early figures (for example, a nuclear outage cost that was "
+    "overstated by several times). No number survived that could not be traced to a source."
 )
 
 st.markdown(
-    "**Step 3. Verify and exclude.** "
-    "Sites found closed or inactive were removed (three mills were dropped during this "
-    "step). Citations were upgraded where possible: the primary source for the top target "
-    "site was moved from a county government social media post to a dated trade press "
-    "article. Map coordinates were corrected against authoritative sources including "
-    "Global Energy Monitor, Wikipedia facility infoboxes, and official facility addresses."
+    "**Built in Claude Code.** The app was developed in Claude Code, with the verified "
+    "data kept in a portable CSV decoupled from the code so it can be reused or audited "
+    "independently."
 )
 
 st.markdown(
-    "**Step 4. Score each site on five evaluation dimensions.** "
-    "Every surviving site was scored on the same five dimensions:"
+    "**Tech stack.** Streamlit for the multi-page app, Python and pandas for the data "
+    "layer, and pydeck for the map. Deployed to Streamlit Cloud, redeploying "
+    "automatically from GitHub."
 )
 
-st.markdown(
-    "1. Fit for scaffolding-intensive maintenance work.\n"
-    "2. Confirmed demand for scaffolding access.\n"
-    "3. Frequency of recurring shutdowns.\n"
-    "4. Ownership structure (corporate owner-operators are weighted higher than "
-    "fragmented contractors).\n"
-    "5. Whether active demand is confirmed now."
-)
+st.subheader("How the target list was built")
 
-st.markdown(
-    "**Step 5. Group into tiers by score.** "
-    "Sites were grouped into three tiers based on their overall score across the five "
-    "dimensions. Each site also carries a confidence level reflecting the quality of its "
-    "primary source (defined in the Sources section below)."
+st.write(
+    "The site list was built source-first in a fixed sequence. Inclusion criteria were "
+    "defined before any site was added, so no site could be chosen to fit a conclusion. "
+    "Every site required a named, dated source (no source, no row). Sites found closed or "
+    "inactive were removed (three mills were dropped), weak citations were upgraded (the "
+    "top target's source moved from a county social media post to dated trade press), and "
+    "map coordinates were corrected against authoritative sources such as Global Energy "
+    "Monitor and official facility records. Each surviving site was then scored on five "
+    "dimensions (sector fit, confirmed scaffolding demand, recurrence of shutdowns, "
+    "ownership structure, and whether demand is active now) and grouped into three tiers, "
+    "each with a confidence level reflecting source quality."
 )
 
 st.subheader("Limitations")
