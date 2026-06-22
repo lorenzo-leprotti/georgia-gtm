@@ -3,7 +3,6 @@ import pandas as pd
 import pydeck as pdk
 
 
-@st.cache_data
 def load_sites() -> pd.DataFrame:
     df = pd.read_csv("data/sites.csv")
     color_map = {
